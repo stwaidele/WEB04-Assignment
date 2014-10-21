@@ -1,8 +1,23 @@
 \section{Hauptteil}
 \label{sec:hauptteil}
 
-\subsection{QR--Codes}
 \subsection{Kurz--URLs}
-\subsection{Verfügbarkeitsanzeige}
+
+Die zunächst einfachst Verbindung von Gedrucktem zu Internetseiten bzw. zum Webshop besteht darin, dem Kunden eine \ac{URL}, also eine Internetadresse\footnote{Obwohl der Begriff URL eine Internetadresse in sehr allgemeiner Form beschreibt, wird er in dieser Arbeit der Lesbarkeit halber synonym zu „WWW--Adresse“ verwendet.} zu nennen, die dieser dann am PC oder per Mobiltelefon aufruft.
+Soll lediglich auf die Startseite des Webangebots hingewiesen werden, ist hierzu die gewöhnliche Adresse hier also \url{www.Manufactum.de}, anzugeben. 
+
+Problematischer wird es, wenn Links zu spezifischen Produktseiten in Webshop abgedruckt werden sollen. Die hier entstehenden \ac{URL}s sind i.d.R. eher lang und somit umständlich für den Kunden:\\ \url{http://www.manufactum.de/manufactum-ziehharmonikaboerse-klein-p759940/?a=64182}
+
+Daher empfielt sich der Einsatz von sogenanten Kurz--URLs. Hier wird eine neue, deutlich kürzere \ac{URL} erzeugt, die den Besucher beim Aufruf auf die ursprüngliche Adresse umleitet. Technisch wird dies dadurch erreicht, dass der Hashwert einer langen Adresse an den Domainnamen des URL--Shorteners gehängt wird. Dadurch können viele lange Adressen auf jeweils
+entsprechende Kurzlinks abgebidet werden: \url{http://goo.gl/QCJH55}\\
+Dienste wie Ow.ly, Bit.ly, Goo.gl oder FixURL.de bieten entsprechende Dienste an, die per \ac{API} auch automatisiert genutzt werden können\footnote{siehe z.B. \url{http://dev.bitly.com/}}. Meist stellen diese Anbieter auch zumindest Aufrufstatistiken\footnote{z.B. Goo.gl} bis hin zu kompletten Analysedaten\footnote{z.B. Ow.ly durch das Social Media Management Tool Hootsuite} zur Vwerfügung.
+
+Da der Kunde einer durch einen Dienst gekürzten \ac{URL} nicht mehr ansieht, wohin sie eigentlich führt, kann man durch die Verwendung eines eigenen, der Marke eindeutig zuordenbaren und dennoch kurzen Domainnamen verwenden. Hierdurch hat man dann volle Kontrolle über die erzeugten Links und Statistiken.\footnote{vgl. \cite{webmag} sowie \cite{gillen}}
+
+\subsection{QR--Codes}
+
+\ac{QR--Codes} 
+
+\subsection{Verfügbarkeitsanzeige bzw. Bestellung zur Ansicht}
 \subsection{Info--Terminal}
 
