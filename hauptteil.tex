@@ -1,23 +1,40 @@
 \section{Hauptteil}
 \label{sec:hauptteil}
 
-\subsection{Kurz--URLs}
+\subsection{Lesbare Internetadressen}
+
+\subsubsection{Angabe der Unternehmenswebsite}
 
 Die zunächst einfachst Verbindung von Gedrucktem zu Internetseiten bzw. zum Webshop besteht darin, dem Kunden eine \ac{URL}, also eine Internetadresse\footnote{Obwohl der Begriff URL eine Internetadresse in sehr allgemeiner Form beschreibt, wird er in dieser Arbeit der Lesbarkeit halber synonym zu „WWW--Adresse“ verwendet.} zu nennen, die dieser dann am PC oder per Mobiltelefon aufruft.
 Soll lediglich auf die Startseite des Webangebots hingewiesen werden, ist hierzu die gewöhnliche Adresse hier also \url{www.Manufactum.de}, anzugeben. 
 
-Problematischer wird es, wenn Links zu spezifischen Produktseiten in Webshop abgedruckt werden sollen. Die hier entstehenden \ac{URL}s sind i.d.R. eher lang und somit umständlich für den Kunden:\\ \url{http://www.manufactum.de/manufactum-ziehharmonikaboerse-klein-p759940/?a=64182}
+\subsubsection{Angabe von Produktspezifischen Informationsseiten}
+
+Problematischer wird es, wenn Links zu spezifischen Produktseiten in Webshop abgedruckt werden sollen. Die hier entstehenden \ac{URL}s sind i.d.R. eher lang und somit umständlich für den Kunden:\\ \url{www.manufactum.de/manufactum-ziehharmonikaboerse-klein-p759940/?a=64182}
 
 Daher empfielt sich der Einsatz von sogenanten Kurz--URLs. Hier wird eine neue, deutlich kürzere \ac{URL} erzeugt, die den Besucher beim Aufruf auf die ursprüngliche Adresse umleitet. Technisch wird dies dadurch erreicht, dass der Hashwert einer langen Adresse an den Domainnamen des URL--Shorteners gehängt wird. Dadurch können viele lange Adressen auf jeweils
 entsprechende Kurzlinks abgebidet werden: \url{http://goo.gl/QCJH55}\\
 Dienste wie Ow.ly, Bit.ly, Goo.gl oder FixURL.de bieten entsprechende Dienste an, die per \ac{API} auch automatisiert genutzt werden können\footnote{siehe z.B. \url{http://dev.bitly.com/}}. Meist stellen diese Anbieter auch zumindest Aufrufstatistiken\footnote{z.B. Goo.gl} bis hin zu kompletten Analysedaten\footnote{z.B. Ow.ly durch das Social Media Management Tool Hootsuite} zur Vwerfügung.
 
-Da der Kunde einer durch einen Dienst gekürzten \ac{URL} nicht mehr ansieht, wohin sie eigentlich führt, kann man durch die Verwendung eines eigenen, der Marke eindeutig zuordenbaren und dennoch kurzen Domainnamen verwenden. Hierdurch hat man dann volle Kontrolle über die erzeugten Links und Statistiken.\footnote{vgl. \cite{webmag} sowie \cite{gillen}}
+Da der Kunde einer durch einen Dienst gekürzten \ac{URL} nicht mehr ansieht, wohin sie eigentlich führt, kann man durch die Verwendung eines eigenen, der Marke eindeutig zuordenbaren und dennoch kurzen Domainnamen verwenden. Hierdurch steigt das Vertrauen der der Kunden in die Seriösität der aufgerufenen Webseite. Auch hat man die Kontrolle über die erzeugten Links und Statistiken.\footnote{vgl. \cite{webmag} sowie \cite{gillen}}
 
-\subsection{QR--Codes}
+Kurz––URLs sind in Geschäften nicht weit verbreitet. Allerdings werden normale Internetadressen oft in Schaufenstern oder auf sonstigen Drucksachen beworben.\footnote{Eigene Beobachtung in den Innenstädten von Freiburg, Stuttgart und Frankfurt}
 
-\ac{QR--Codes} 
+\subsection{Maschienenlesbare Internetadressen}
+
+Ein \ac{QR--Code} ist eine weit verbreitete\footnote{vgl. \cite{statista:qr}} Form von 2D--Barcodes mit standardisierter Erzeugungsvorschrift\footnote{vgl. \cite{iso:qr} bzw. \url{http://www.qrcode.com/en/about/standards.html}}. Es besteht eine hinreichend große Auswahl an Diensten oder Programmen, die QR--Codes generieren und lesen können. Bei den Leseprogrammen ist besonders die Verbreitung der entsprechenden Smartphone--Apps interessant, dann durch diese erhalten Kunden mit Smartphone die Möglichkeit, \ac{URL}s direkt aus dem Katalog oder vom Preisschild im Ladengeschäft zu scannen und aufzurufen. 
+
+Durch Platzierung von QR--Codes an den einzelnen Artikeln können Kunden direkt zu entsprechenden Web--Seiten im Online--Shop geleitet werden, um dort Zusatzinformationen oder Bewertungen anderer Kunden abzurufen. 
+
+QR--Codes sind für viele Kunden als Link zu weiteren Informationen direkt erkennbar. Eine Erklärung ist somit i.d.R. nicht notwendig, kann jedoch mit einem entsprechend plazierten menschenlesbaren Link implizit beigefügt werden.
 
 \subsection{Verfügbarkeitsanzeige bzw. Bestellung zur Ansicht}
+
+In Webshops\footnote{z.B. Amazon.de, Alternate.de, aber auch bei Manufactum.de} wird oft basierend auf dem Lagerstand die erwartete Lieferzeit angegeben. Diese Funktionalität kann in sofern erweitert werden, dass die Verfügbarkeit in den Filialen angezeigt werden kann. Besucher des Webshops können somit erkennen, ob der Artikel vor Ort betrachtet bzw. direkt abgeholt werden kann\footnote{Entsprechende Funktionalität ist z.B. im Webshop von MediaMarkt implementiert}. 
+
+Hierdurch werden neben der Verknüpfung der beiden Verkaufskanäle weitere Effekte erzielt: Durch eine Vorreservierung auf der Website sinkt das Risiko, dass sich der Kunde für einen anderen Anbieter oder gegen einen Kauf entscheidet. Auch vermindert sich die Zahl der Rücksendungen, wenn der Kunde nicht „zur Ansicht“ nach Hause bestellt, sondern die Waren im Geschäft begutachten kann. Bei entsprechender Gestaltung der Texte und Konditionen wäre es evt. sogar möglich, den Kauf nicht mehr nach dem Fernabsatzgesetz sondern als regulärer Einkauf in der Filiale durchführen zu können. Des weiteren entfällt die Notwendigkeit, die Zahlung online abzuwickeln.
+
+Um eine entsprechende Funktionalität im Webshop bieten zu können, ist es notwendig diesen eng in das \ac{ERP} zu integrieren. Es müssen die entsprechenden Lagerbestände von der Shopsoftware abgefragt werden können. Außerdem sind Vormerkungen bzw. Bestellungen zur Ansicht/Abholung an die entsprechenden Filialen weiterzuleiten.  Es werden also hohe Anforderungen an die Unternehmensprozesse sowie an die Echtzeitfähigkeit der Schnittstelle zwischen Webshop und ERP--System gestellt.
+
 \subsection{Info--Terminal}
 
