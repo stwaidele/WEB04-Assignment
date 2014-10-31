@@ -8,7 +8,7 @@
 Die zunächst einfachst Verbindung von Gedrucktem zu Internetseiten bzw. zum Webshop besteht darin, dem Kunden eine \ac{URL}, also eine Internetadresse\footnote{Obwohl der Begriff URL eine Internetadresse in sehr allgemeiner Form beschreibt, wird er in dieser Arbeit der Lesbarkeit halber synonym zu „WWW--Adresse“ verwendet.} zu nennen, die dieser dann am PC oder per Mobiltelefon aufruft.
 Soll lediglich auf die Startseite des Webangebots hingewiesen werden, ist hierzu die gewöhnliche Adresse hier also \url{www.Manufactum.de}, anzugeben. 
 
-\subsubsection{Angabe von Produktspezifischen Informationsseiten}
+\subsubsection{Angabe von produktspezifischen Informationsseiten}
 
 Problematischer wird es, wenn Links zu spezifischen Produktseiten in Webshop abgedruckt werden sollen. Die hier entstehenden \ac{URL}s sind i.d.R. eher lang und somit umständlich für den Kunden:\\ \url{www.manufactum.de/manufactum-ziehharmonikaboerse-klein-p759940/?a=64182}
 
@@ -26,15 +26,41 @@ Ein \ac{QR--Code} ist eine weit verbreitete\footnote{vgl. \cite{statista:qr}} Fo
 
 Durch Platzierung von QR--Codes an den einzelnen Artikeln können Kunden direkt zu entsprechenden Web--Seiten im Online--Shop geleitet werden, um dort Zusatzinformationen oder Bewertungen anderer Kunden abzurufen. 
 
-QR--Codes sind für viele Kunden als Link zu weiteren Informationen direkt erkennbar. Eine Erklärung ist somit i.d.R. nicht notwendig, kann jedoch mit einem entsprechend plazierten menschenlesbaren Link implizit beigefügt werden.
+QR--Codes sind für viele Kunden als Link zu weiteren Informationen direkt erkennbar. Eine Erklärung ist somit i.d.R. nicht notwendig, kann jedoch mit einem entsprechend plazierten menschenlesbaren Link implizit beigefügt werden. Wäredn die Erzeugung einzelner weniger QR--Codes individuell vorgenommen werden kann, ist bei einer Ausstattung von vielen oder allen Artikeln eine automatische Erzeugung per \ac{API} oder direkt im Shopsystem notwendig.
 
 \subsection{Verfügbarkeitsanzeige bzw. Bestellung zur Ansicht}
+\label{bza}
 
-In Webshops\footnote{z.B. Amazon.de, Alternate.de, aber auch bei Manufactum.de} wird oft basierend auf dem Lagerstand die erwartete Lieferzeit angegeben. Diese Funktionalität kann in sofern erweitert werden, dass die Verfügbarkeit in den Filialen angezeigt werden kann. Besucher des Webshops können somit erkennen, ob der Artikel vor Ort betrachtet bzw. direkt abgeholt werden kann\footnote{Entsprechende Funktionalität ist z.B. im Webshop von MediaMarkt implementiert}. 
+In Webshops\footnote{z.B. Amazon.de, Alternate.de, aber auch bei Manufactum.de} wird oft basierend auf dem Lagerstand die erwartete Lieferzeit angegeben. Diese Funktionalität kann in sofern erweitert werden, dass die Verfügbarkeit in den Filialen angezeigt werden kann. Besucher des Webshops können somit erkennen, ob der Artikel vor Ort betrachtet bzw. direkt abgeholt werden kann\footnote{Entsprechende Funktionalität ist z.B. im Webshop von MediaMarkt (Artikel in Filliale … direkt erhältlich.) bzw. Obi (Reservieren und abholen) implementiert}. 
 
 Hierdurch werden neben der Verknüpfung der beiden Verkaufskanäle weitere Effekte erzielt: Durch eine Vorreservierung auf der Website sinkt das Risiko, dass sich der Kunde für einen anderen Anbieter oder gegen einen Kauf entscheidet. Auch vermindert sich die Zahl der Rücksendungen, wenn der Kunde nicht „zur Ansicht“ nach Hause bestellt, sondern die Waren im Geschäft begutachten kann. Bei entsprechender Gestaltung der Texte und Konditionen wäre es evt. sogar möglich, den Kauf nicht mehr nach dem Fernabsatzgesetz sondern als regulärer Einkauf in der Filiale durchführen zu können. Des weiteren entfällt die Notwendigkeit, die Zahlung online abzuwickeln.
 
 Um eine entsprechende Funktionalität im Webshop bieten zu können, ist es notwendig diesen eng in das \ac{ERP} zu integrieren. Es müssen die entsprechenden Lagerbestände von der Shopsoftware abgefragt werden können. Außerdem sind Vormerkungen bzw. Bestellungen zur Ansicht/Abholung an die entsprechenden Filialen weiterzuleiten.  Es werden also hohe Anforderungen an die Unternehmensprozesse sowie an die Echtzeitfähigkeit der Schnittstelle zwischen Webshop und ERP--System gestellt.
 
 \subsection{Info--Terminal}
+
+Kunden in einer Filliale können mit Hilfe eines Info–Terminals auf die Funktionen des Webshops zugreifen. Dadurch können momentan nicht im Geschäft vorrätige Artikel direkt bestellt und evt. vor Ort bezahlt werden. Hierdurch scheitert ein Kaufinteresse nicht an der begrenzten Lagerfähigkeit von Ladengeschäften.
+
+Für die Ausgestaltung dieser Lösung stehen mehrere Möglichkeiten offen. Wie im klassischen Buchhandel ist es möglich, dass Verkaufsmitarbeiter an den Informations–Terminals nach Artikeln suchen und diese zur Lieferung in die Filiale oder zum Kunden nach Hause bestellen. Auch denkbar sind Terminals auf PC–Basis, mit denen Kunden selbst im Web–Shop recherchieren und bestellen können\footnote{z.B. im Outlet des Versandhändlers Pearl in Auggen}. Am Markt sind aber auch spezielle Lösungen, die eine angepasste Version des Online–Shops auf einem Touch–Terminal präsentiert\footnote{z.B. Marks and Spencers, vgl. \cite{intelms}, aber auch Tschibo in Freiburg}. Die Anpassung der Shopoberfläche an den Touchscreen kann hierbei manuell erfolgen, oder von einer entsprechenden Software automatisch vorgenommen werden\footnote{z.B. durch Nephele for polytouch, \url{www.polytouch.de}}.
+
+Die Integration ins das \ac{ERP} erfolgt bei dieser Lösung durch die Nutzung des ohnehin schon vorhandenen Online–Shops. Allerdings sind hier entsprechende Liefer-- und Zahloptionen zu inplementieren, damit die Waren auch wie in Abschnitt \myref{bza} beschrieben in die Filiale geliefert bzw. dort bezahlt werden können. 
+
+\section{Handlungsempfehlung}
+
+Aufgrund der kostengünstigen Möglichkeiten der Herstellung von QR--Codes sowie den ausführlichen Informationen, die Manufactum über die angebotenen Artikel bereitstellt, empfiehlt sich die angabe ebendieser, in Kombination mit menschenlesbaren Kurz--URLs. Um das Vertrauen der Kunden zu erhöhen sollten diese mit einen eigenen, dem Unternehem zuordenbare Domainnamen erzeugt werden. Die machinenlesbaren und menschenlesbaren URLs sollten unterscheidbar sein. Dadurch wird eine Auswertung bzgl. der genutzten Technik ermöglicht werden.
+
+Ebenfalls empfehlenswert ist eine entsprechend aufbereitete Version des Web--Shops für Info--Terminals, die in den Fillialen installiert werden. In der Einführungsphase können diese kostengünstig mit PC--Hardware realisiert werden.
+
+Diese beiden Verknüpfungsarten eignen sich aufgrund der relativ geringen Laufzeiten gut für Lernphasen nach dem Trial and Error Prinzip. Mit jeder Neuauflage des Katalogs bzw. immer wenn Preisschilder gedruckt werden, kann man auf gemacht Erfahrungen zurückgreifen und Details den Erfordernissen anpassen.
+
+Die Verfügbarkeitsanzeige bzw. die Bestellung der Waren in eine Filiale zur Ansicht scheint für Interessenten in der Nähe einer Filiale einen großen Kundennutzen zu erzeugen. Hier bestehen jedoch auch die höchsten Anforderungen an die zu Grunde liegende Software. Bei dieser Verknüpfungstechnik ist eine Anpassung der Prozessketten im Unternehmen notwendig, weshalb Änderungen deutlich länger dauern als bei den anderen Möglichkeiten. Eine Einführung erfordert somit bereits im Vorfeld eine gründliche Untersuchung und Planung. 
+
+
+
+
+
+
+
+
+
 
